@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Apps (React Native) - Slide 6</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        /* Left Side Content */
+        .rn-info {
+            font-size: 1.2rem;
+        }
+        .rn-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #61DAFB, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rn-bullets {
+            list-style: none;
+        }
+        .rn-bullets li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .rn-bullets li i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.5rem;
+            color: #61DAFB;
+        }
+        .emphasis {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Right Side Diagram */
+        .diagram-container {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hub-node {
+            width: 140px;
+            height: 140px;
+            background: rgba(97, 218, 251, 0.1);
+            border: 2px solid rgba(97, 218, 251, 0.4);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 40px rgba(97, 218, 251, 0.2);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .hub-node i {
+            font-size: 4rem;
+            color: #61DAFB;
+            animation: spin 10s linear infinite;
+        }
+        .hub-node span {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: white;
+        }
+
+        .platform-node {
+            width: 100px;
+            height: 100px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: transform 0.3s;
+        }
+        .platform-node:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .node-ios {
+            top: 40px;
+            right: 0;
+        }
+        .node-ios i { font-size: 3rem; color: #fff; }
+
+        .node-android {
+            bottom: 40px;
+            right: 0;
+        }
+        .node-android i { font-size: 3rem; color: #3DDC84; }
+
+        .platform-node span {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Connecting Lines */
+        .svg-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .line-path {
+            fill: none;
+            stroke: rgba(255,255,255,0.1);
+            stroke-width: 3;
+            stroke-dasharray: 8;
+            animation: dash 20s linear infinite;
+        }
+        .line-path.ios { stroke: rgba(255,255,255,0.3); }
+        .line-path.android { stroke: rgba(61, 220, 132, 0.4); }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-device-mobile"></i> Cross-Platform App Development
+            </div>
+            
+            <h2 class="title-slide">Mobile Apps with React Native</h2>
+            
+            <div class="split-layout">
+                <!-- Info Left -->
+                <div class="rn-info">
+                    <div class="rn-title">Write Once, Run Anywhere</div>
+                    <ul class="rn-bullets">
+                        <li>
+                            <i class="ph-fill ph-code"></i>
+                            <span class="emphasis">One Core Codebase.</span> Uses JavaScript to compile directly into truly native elements on both major mobile platforms.
+                        </li>
+                        <li>
+                            <i class="ph-fill ph-rocket"></i>
+                            <span class="emphasis">#1 Choice for Startups.</span> Cuts development time and cost in half compared to building separate Swift (iOS) and Kotlin (Android) apps.
+                        </li>
+                        <li>
+                            <i class="ph-fill ph-lightning"></i>
+                            <span class="emphasis">Fast Refresh.</span> See UI and logic changes instantly in the simulator without needing to recompile the whole app.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Diagram Right -->
+                <div class="diagram-container">
+                    <!-- SVG lines connecting hub to platforms -->
+                    <svg class="svg-lines">
+                        <!-- Path to iOS -->
+                        <path class="line-path ios" d="M 200 200 Q 300 90 450 90" />
+                        <!-- Path to Android -->
+                        <path class="line-path android" d="M 200 200 Q 300 310 450 310" />
+                    </svg>
+
+                    <!-- JS Hub -->
+                    <div class="hub-node" style="position: absolute; left: 100px;">
+                        <i class="ph-fill ph-atom"></i>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <!-- iOS Node -->
+                    <div class="platform-node node-ios" style="left: 400px;">
+                        <i class="ph-fill ph-apple-logo"></i>
+                        <span>iOS Native</span>
+                    </div>
+
+                    <!-- Android Node -->
+                    <div class="platform-node node-android" style="left: 400px;">
+                        <i class="ph-fill ph-android-logo"></i>
+                        <span>Android Native</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">6 / 10</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

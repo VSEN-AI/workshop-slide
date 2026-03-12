@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo - Slide 9</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .demo-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+            height: 100%;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .cta-text {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .cta-subtext {
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Fake Editor Windows */
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mac-window {
+            background: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mac-header {
+            background: #2d2d2d;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 8px;
+        }
+
+        .mac-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .mac-dot.close { background: #ff5f56; }
+        .mac-dot.min { background: #ffbd2e; }
+        .mac-dot.max { background: #27c93f; }
+
+        .mac-title {
+            margin: 0 auto;
+            color: #858585;
+            font-size: 0.85rem;
+            font-family: monospace;
+            padding-right: 56px; /* offset for dots */
+        }
+
+        .code-content {
+            padding: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #d4d4d4;
+            max-height: 300px;
+            overflow: hidden;
+        }
+
+        /* Syntax Highlight Colors */
+        .kd { color: #569cd6; } /* keyword */
+        .na { color: #9cdcfe; } /* name */
+        .s { color: #ce9178; } /* string */
+        .f { color: #dcdcaa; } /* function */
+        .p { color: #c586c0; } /* purple keyword */
+        .t { color: #4ec9b0; } /* type/component */
+        .c { color: #6a9955; } /* comment */
+        
+        .typing-animation {
+            border-right: 2px solid #d4d4d4;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { border-color: transparent; } }
+
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-code-block"></i> Interactive Session
+            </div>
+            
+            <h2 class="title-slide">Live Demo</h2>
+            
+            <div class="demo-layout">
+                <!-- CTA Left -->
+                <div class="cta-box">
+                    <i class="ph-fill ph-rocket-launch cta-icon"></i>
+                    <div class="cta-text">Let’s build a <span class="text-gradient">Smart Contact App</span> in 15 minutes.</div>
+                    <div class="cta-subtext">Open your editors. Follow the logic. Deploy to the world.</div>
+                </div>
+
+                <!-- Fake IDE Right -->
+                <div class="editor-container">
+                    <div class="mac-window">
+                        <div class="mac-header">
+                            <div class="mac-dot close"></div>
+                            <div class="mac-dot min"></div>
+                            <div class="mac-dot max"></div>
+                            <div class="mac-title">App.jsx — SmartContact</div>
+                        </div>
+                        <div class="code-content">
+<pre><code><span class="kd">import</span> <span class="na">React</span><span class="kd">,</span> { <span class="na">useState</span> } <span class="kd">from</span> <span class="s">'react'</span>;
+<span class="kd">import</span> { <span class="na">ContactCard</span> } <span class="kd">from</span> <span class="s">'./components'</span>;
+
+<span class="kd">export default</span> <span class="kd">function</span> <span class="f">App</span>() {
+  <span class="kd">const</span> [<span class="na">contacts</span>, <span class="f">setContacts</span>] <span class="kd">=</span> <span class="f">useState</span>([]);
+
+  <span class="c">// Fetch Data from AI backend</span>
+  <span class="kd">const</span> <span class="f">fetchContacts</span> <span class="kd">=</span> <span class="kd">async</span> () <span class="kd">=></span> {
+    <span class="kd">const</span> <span class="na">res</span> <span class="kd">=</span> <span class="p">await</span> <span class="f">fetch</span>(<span class="s">'/api/smart-contacts'</span>);
+    <span class="f">setContacts</span>(<span class="p">await</span> <span class="na">res</span>.<span class="f">json</span>());
+  };
+
+  <span class="p">return</span> (
+    <span class="kd">&lt;</span><span class="t">div</span> <span class="na">className</span><span class="kd">=</span><span class="s">"container"</span><span class="kd">&gt;</span>
+      <span class="kd">&lt;</span><span class="t">h1</span><span class="kd">&gt;</span>Smart Contacts<span class="kd">&lt;/</span><span class="t">h1</span><span class="kd">&gt;</span>
+      {<span class="na">contacts</span>.<span class="f">map</span>(<span class="na">c</span> <span class="kd">=></span> <span class="kd">&lt;</span><span class="t">ContactCard</span> <span class="na">data</span><span class="kd">=</span>{<span class="na">c</span>} <span class="kd">/&gt;</span>)}
+      <span class="typing-animation"> </span>
+    <span class="kd">&lt;/</span><span class="t">div</span><span class="kd">&gt;</span>
+  );
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">9 / 10</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

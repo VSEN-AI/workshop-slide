@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Your Mentors - Slide 2</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .mentor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        .mentor-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        .mentor-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .mentor-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .mentor-photo.p2 {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+        }
+        .mentor-name {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        .mentor-role {
+            color: var(--accent-1);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        .experience-list {
+            list-style: none;
+        }
+        .experience-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .experience-list i {
+            color: var(--accent-2);
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+        .logo-cloud {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            font-size: 2.5rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        .logo-cloud i {
+            transition: color 0.3s;
+        }
+        .logo-cloud i:hover {
+            color: var(--text-primary);
+        }
+        .message-box {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-users"></i> The Instructors
+            </div>
+            
+            <h2 class="title-slide">Meet Your Mentors</h2>
+            
+            <div class="mentor-grid">
+                <!-- Sandeep -->
+                <div class="mentor-card glass-card">
+                    <div class="mentor-header">
+                        <div class="mentor-photo">
+                            <i class="ph ph-user"></i>
+                        </div>
+                        <div>
+                            <div class="mentor-name">Sandeep Mishra</div>
+                            <div class="mentor-role">Senior Software Engineer</div>
+                        </div>
+                    </div>
+                    <ul class="experience-list">
+                        <li><i class="ph-fill ph-check-circle"></i> <span>5+ years of MNC experience building scalable systems.</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Expertise in modern frontend and backend architectures.</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Passionate about mentoring the next generation of devs.</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Vikrant -->
+                <div class="mentor-card glass-card">
+                    <div class="mentor-header">
+                        <div class="mentor-photo p2">
+                            <i class="ph ph-user"></i>
+                        </div>
+                        <div>
+                            <div class="mentor-name">Vikrant Upadhyay</div>
+                            <div class="mentor-role">Lead Architect</div>
+                        </div>
+                    </div>
+                    <ul class="experience-list">
+                        <li><i class="ph-fill ph-check-circle"></i> <span>5+ years scaling infrastructure for thousands of users.</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Specialist in distributed systems and cloud deployments.</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Driven to bridge the gap between academia and industry.</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="logo-cloud">
+                <i class="ph ph-amazon-logo"></i>
+                <i class="ph ph-google-logo"></i>
+                <i class="ph ph-meta-logo"></i>
+                <i class="ph ph-microsoft-logo"></i>
+                <i class="ph ph-stripe-logo"></i>
+            </div>
+            
+            <div class="message-box text-gradient-accent">
+                "We’ve built systems for millions; today we show you how."
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">2 / 10</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
