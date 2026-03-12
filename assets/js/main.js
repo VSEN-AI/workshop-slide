@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Determine the current slide index from the URL
     const currentPath = window.location.pathname;
     let currentSlide = 1;
-    
+
     // Extract number from slideX.html
     const match = currentPath.match(/slide(\d+)\.html/);
     if (match) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const totalSlides = 10;
-    
+
     // Set progress bar width based on current slide
     const progressBar = document.querySelector('.progress-bar');
     if (progressBar) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation function
     const navigateToSlide = (direction) => {
         let targetSlide = currentSlide;
-        
+
         if (direction === 'next' && currentSlide < totalSlides) {
             targetSlide++;
         } else if (direction === 'prev' && currentSlide > 1) {
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSlide !== currentSlide) {
             // Add exit animation class
             document.body.classList.add('fade-out');
-            
+
             // Wait for animation to finish before navigating
             setTimeout(() => {
-                const targetUrl = `slide${targetSlide}.html`;
+                const targetUrl = (currentSlide === 2 && direction === "prev") ? "index.html" : `slide${targetSlide}.html`;
                 // Try relative path first
                 window.location.href = targetUrl;
             }, 300); // matches the CSS transition time
