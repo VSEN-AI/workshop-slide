@@ -3,119 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Demo - Slide 9</title>
+    <title>Backend Details - Slide 9</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .demo-layout {
+        .backend-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-            height: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+        .backend-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             text-align: center;
         }
-
-        .cta-icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #60a5fa, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulse 2s infinite alternate;
+        .b-icon {
+            font-size: 3.5rem;
+            color: var(--accent-2);
+            margin-bottom: 1rem;
         }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-
-        .cta-text {
+        .b-title {
             font-family: var(--font-heading);
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            color: white;
         }
-        .cta-subtext {
+        .b-desc {
             color: var(--text-secondary);
-            margin-top: 1rem;
             font-size: 1.1rem;
+            line-height: 1.4;
         }
-
-        /* Fake Editor Windows */
-        .editor-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .mac-window {
-            background: #1e1e1e;
+        .data-flow {
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed rgba(255,255,255,0.2);
+            padding: 1.5rem;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .mac-header {
-            background: #2d2d2d;
-            height: 32px;
+            margin-top: 2rem;
+            text-align: center;
             display: flex;
             align-items: center;
-            padding: 0 16px;
-            gap: 8px;
-        }
-
-        .mac-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .mac-dot.close { background: #ff5f56; }
-        .mac-dot.min { background: #ffbd2e; }
-        .mac-dot.max { background: #27c93f; }
-
-        .mac-title {
-            margin: 0 auto;
-            color: #858585;
-            font-size: 0.85rem;
+            justify-content: center;
+            gap: 1rem;
             font-family: monospace;
-            padding-right: 56px; /* offset for dots */
-        }
-
-        .code-content {
-            padding: 1.5rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 1.2rem;
             color: #d4d4d4;
-            max-height: 300px;
-            overflow: hidden;
         }
-
-        /* Syntax Highlight Colors */
-        .kd { color: #569cd6; } /* keyword */
-        .na { color: #9cdcfe; } /* name */
-        .s { color: #ce9178; } /* string */
-        .f { color: #dcdcaa; } /* function */
-        .p { color: #c586c0; } /* purple keyword */
-        .t { color: #4ec9b0; } /* type/component */
-        .c { color: #6a9955; } /* comment */
-        
-        .typing-animation {
-            border-right: 2px solid #d4d4d4;
-            animation: blink 1s step-end infinite;
+        .highlight-data {
+            color: #4ade80;
+            font-weight: bold;
         }
-        @keyframes blink { 50% { border-color: transparent; } }
-
     </style>
 </head>
 <body>
@@ -128,59 +68,42 @@
     <div class="slide-container">
         <div class="content">
             <div class="badge">
-                <i class="ph ph-code-block"></i> Interactive Session
+                <i class="ph ph-database"></i> Logic & Data
             </div>
             
-            <h2 class="title-slide">Live Demo</h2>
+            <h2 class="title-slide">Backend: The Brain of the App</h2>
+            <p class="subtitle mt-2">Where calculations, security, and memory live.</p>
             
-            <div class="demo-layout">
-                <!-- CTA Left -->
-                <div class="cta-box">
-                    <i class="ph-fill ph-rocket-launch cta-icon"></i>
-                    <div class="cta-text">Let’s build a <span class="text-gradient">Smart Contact App</span> in 15 minutes.</div>
-                    <div class="cta-subtext">Open your editors. Follow the logic. Deploy to the world.</div>
+            <div class="backend-grid">
+                <div class="backend-card">
+                    <i class="ph-fill ph-cpu b-icon"></i>
+                    <div class="b-title">The Server</div>
+                    <div class="b-desc">A computer running 24/7 on the internet. It listens for clicks from the Frontend.</div>
                 </div>
-
-                <!-- Fake IDE Right -->
-                <div class="editor-container">
-                    <div class="mac-window">
-                        <div class="mac-header">
-                            <div class="mac-dot close"></div>
-                            <div class="mac-dot min"></div>
-                            <div class="mac-dot max"></div>
-                            <div class="mac-title">App.jsx — SmartContact</div>
-                        </div>
-                        <div class="code-content">
-<pre><code><span class="kd">import</span> <span class="na">React</span><span class="kd">,</span> { <span class="na">useState</span> } <span class="kd">from</span> <span class="s">'react'</span>;
-<span class="kd">import</span> { <span class="na">ContactCard</span> } <span class="kd">from</span> <span class="s">'./components'</span>;
-
-<span class="kd">export default</span> <span class="kd">function</span> <span class="f">App</span>() {
-  <span class="kd">const</span> [<span class="na">contacts</span>, <span class="f">setContacts</span>] <span class="kd">=</span> <span class="f">useState</span>([]);
-
-  <span class="c">// Fetch Data from AI backend</span>
-  <span class="kd">const</span> <span class="f">fetchContacts</span> <span class="kd">=</span> <span class="kd">async</span> () <span class="kd">=></span> {
-    <span class="kd">const</span> <span class="na">res</span> <span class="kd">=</span> <span class="p">await</span> <span class="f">fetch</span>(<span class="s">'/api/smart-contacts'</span>);
-    <span class="f">setContacts</span>(<span class="p">await</span> <span class="na">res</span>.<span class="f">json</span>());
-  };
-
-  <span class="p">return</span> (
-    <span class="kd">&lt;</span><span class="t">div</span> <span class="na">className</span><span class="kd">=</span><span class="s">"container"</span><span class="kd">&gt;</span>
-      <span class="kd">&lt;</span><span class="t">h1</span><span class="kd">&gt;</span>Smart Contacts<span class="kd">&lt;/</span><span class="t">h1</span><span class="kd">&gt;</span>
-      {<span class="na">contacts</span>.<span class="f">map</span>(<span class="na">c</span> <span class="kd">=></span> <span class="kd">&lt;</span><span class="t">ContactCard</span> <span class="na">data</span><span class="kd">=</span>{<span class="na">c</span>} <span class="kd">/&gt;</span>)}
-      <span class="typing-animation"> </span>
-    <span class="kd">&lt;/</span><span class="t">div</span><span class="kd">&gt;</span>
-  );
-}</code></pre>
-                        </div>
-                    </div>
+                
+                <div class="backend-card">
+                    <i class="ph-fill ph-shield-check b-icon" style="color: var(--accent-3);"></i>
+                    <div class="b-title">Security & Logic</div>
+                    <div class="b-desc">Checks if your password is correct. Calculates your cart total.</div>
                 </div>
+                
+                <div class="backend-card">
+                    <i class="ph-fill ph-hard-drives b-icon" style="color: #60a5fa;"></i>
+                    <div class="b-title">The Database</div>
+                    <div class="b-desc">The memory. Stores your profile picture, messages, and friend lists forever.</div>
+                </div>
+            </div>
+            
+            <div class="data-flow">
+                <i class="ph-fill ph-file-json" style="font-size: 2rem; color: #facc15;"></i>
+                Backend sends data in JSON format: <span class="highlight-data">{ "user": "Sandeep", "balance": "$500" }</span>
             </div>
         </div>
 
         <div class="footer">
             <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
             <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
-            <div class="footer-right">9 / 10</div>
+            <div class="footer-right">9 / 27</div>
         </div>
         <div class="progress-bar"></div>
     </div>

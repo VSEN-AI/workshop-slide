@@ -3,102 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Next Step - Slide 10</title>
+    <title>How the Internet Works - Slide 5</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .final-layout {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .cta-big {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 2rem;
-            font-family: var(--font-heading);
-            font-weight: 800;
-        }
-
-        .action-list {
-            list-style: none;
-        }
-        .action-list li {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+        .flow-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            color: var(--text-secondary);
+            justify-content: space-between;
+            margin-top: 2rem;
+            width: 100%;
+            position: relative;
         }
-        .action-list i {
-            color: var(--accent-1);
-            font-size: 1.75rem;
+        
+        /* Connecting Line */
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            z-index: 0;
+            transform: translateY(-50%);
         }
 
-        .qr-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 32px;
+        .flow-step {
+            position: relative;
+            z-index: 1;
+            width: 22%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            transform: rotate(2deg);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .qr-card:hover {
-            transform: rotate(0deg) scale(1.05);
+            backdrop-filter: blur(20px);
+            transition: transform 0.3s;
         }
 
-        .qr-placeholder {
-            width: 250px;
-            height: 250px;
-            background: #fff;
-            border: 4px solid #f4f4f5;
-            border-radius: 16px;
-            margin: 0 auto 1.5rem;
+        .flow-step:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12rem;
-            color: #18181b; /* dark icon */
-        }
-        
-        .qr-text {
-            color: #18181b;
+            font-weight: bold;
             font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.5rem;
-        }
-        .qr-subtext {
-            color: #52525b;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        .qa-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
-            color: white;
-            border-radius: 999px;
-            font-size: 1.5rem;
+        .step-icon {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: var(--text-primary);
+        }
+
+        .step-title {
             font-family: var(--font-heading);
             font-weight: 700;
-            margin-top: 2rem;
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
-            animation: bounce 2s infinite;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
+
+        /* Animated Pulse on the line */
+        .pulse-dot {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            box-shadow: 0 0 20px var(--accent-1);
+            animation: travel 4s infinite linear;
+        }
+
+        @keyframes travel {
+            0% { left: 5%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: 95%; opacity: 0; }
+        }
+
+        /* Specific Icon Colors */
+        .c-react { color: #61DAFB; }
+        .c-api { color: #fff; }
+        .c-node { color: #68A063; }
+        .c-mongo { color: #4DB33D; }
     </style>
 </head>
 <body>
@@ -110,36 +124,46 @@
     
     <div class="slide-container">
         <div class="content">
-            <div class="badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #34d399;">
-                <i class="ph ph-flag-checkered"></i> Conclusion
+            <div class="badge">
+                <i class="ph ph-arrows-left-right"></i> Architecture
             </div>
             
-            <div class="final-layout">
-                <!-- Info Left -->
-                <div>
-                    <h2 class="cta-big">
-                        Your Journey <br />
-                        <span class="text-gradient-accent">Starts Today.</span>
-                    </h2>
-                    
-                    <ul class="action-list">
-                        <li><i class="ph-fill ph-users-three"></i> Join the vsen.ai exclusive community.</li>
-                        <li><i class="ph-fill ph-calendar-check"></i> Register for upcoming deeper-dive batches.</li>
-                        <li><i class="ph-fill ph-briefcase"></i> Land your first high-paying MNC role.</li>
-                    </ul>
-
-                    <div class="qa-badge">
-                        <i class="ph-bold ph-chat-circle-question"></i> Open Q&A Session
-                    </div>
+            <h2 class="title-slide">How the Internet Actually Works</h2>
+            <p class="subtitle mt-2">The Request-Response Cycle in real time.</p>
+            
+            <div class="flow-container">
+                <div class="pulse-dot"></div>
+                
+                <!-- Step 1 -->
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <i class="ph-fill ph-cursor-click step-icon c-react"></i>
+                    <div class="step-title">The Action</div>
+                    <div class="step-desc">User clicks a button on the UI (React frontend).</div>
                 </div>
 
-                <!-- QR Right -->
-                <div class="qr-card">
-                    <div class="qr-placeholder">
-                        <i class="ph-bold ph-qr-code"></i>
-                    </div>
-                    <div class="qr-text">Scan to Connect</div>
-                    <div class="qr-subtext">Join our WhatsApp Group</div>
+                <!-- Step 2 -->
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <i class="ph-fill ph-paper-plane-right step-icon c-api"></i>
+                    <div class="step-title">The Request</div>
+                    <div class="step-desc">API Request is sent across the internet (Axios/Fetch).</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <i class="ph-fill ph-cpu step-icon c-node"></i>
+                    <div class="step-title">The Server</div>
+                    <div class="step-desc">Server processes the logic and authenticates (Node/Express).</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <i class="ph-fill ph-database step-icon c-mongo"></i>
+                    <div class="step-title">The Data</div>
+                    <div class="step-desc">Data is securely fetched or saved into the DB (MongoDB).</div>
                 </div>
             </div>
         </div>
@@ -147,13 +171,13 @@
         <div class="footer">
             <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
             <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
-            <div class="footer-right">10 / 10</div>
+            <div class="footer-right">10 / 27</div>
         </div>
-        <div class="progress-bar" style="width: 100%;"></div>
+        <div class="progress-bar"></div>
     </div>
 
     <div class="nav-hint">
-        Use <span class="key">&rarr;</span> or <span class="key">&larr;</span> to navigate
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
     </div>
 
     <script src="assets/js/main.js"></script>

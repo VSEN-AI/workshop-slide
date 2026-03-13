@@ -3,101 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The MERN Stack - Slide 4</title>
+    <title>Degree vs Skills - Slide 4</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .mern-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+        .comparison-container {
+            display: flex;
             gap: 2rem;
-            margin-top: 3rem;
-            width: 100%;
+            margin-top: 2.5rem;
+            align-items: stretch;
         }
-        .tech-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .vs-card {
+            flex: 1;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             border-radius: 24px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 2rem;
             position: relative;
-            z-index: 1;
         }
-        .tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 24px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s;
+        .vs-card.active {
+            border-color: var(--accent-2);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(139, 92, 246, 0.05));
         }
-        .tech-card:hover {
-            transform: translateY(-10px);
-        }
-        .tech-card:hover::before {
-            opacity: 0.15;
-        }
-        
-        /* MongoDB Color */
-        .tech-mongo:hover::before { background: radial-gradient(circle at top, #4DB33D, transparent 70%); }
-        .tech-mongo .tech-icon { color: #4DB33D; text-shadow: 0 0 20px rgba(77, 179, 61, 0.4); }
-        .tech-mongo .tech-letter { color: #4DB33D; }
-        
-        /* Express Color */
-        .tech-express:hover::before { background: radial-gradient(circle at top, #ffffff, transparent 70%); }
-        .tech-express .tech-icon { color: #ffffff; text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
-        .tech-express .tech-letter { color: #ffffff; }
-
-        /* React Color */
-        .tech-react:hover::before { background: radial-gradient(circle at top, #61DAFB, transparent 70%); }
-        .tech-react .tech-icon { color: #61DAFB; text-shadow: 0 0 20px rgba(97, 218, 251, 0.4); animation: spin 10s linear infinite; }
-        .tech-react .tech-letter { color: #61DAFB; }
-
-        /* Node Color */
-        .tech-node:hover::before { background: radial-gradient(circle at top, #68A063, transparent 70%); }
-        .tech-node .tech-icon { color: #68A063; text-shadow: 0 0 20px rgba(104, 160, 99, 0.4); }
-        .tech-node .tech-letter { color: #68A063; }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .tech-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        .tech-letter {
-            font-size: 5rem;
+        .vs-title {
             font-family: var(--font-heading);
-            font-weight: 800;
-            line-height: 1;
-            opacity: 0.1;
-            position: absolute;
-            bottom: -10px;
-            right: 10px;
-            z-index: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-        }
-        .tech-card:hover .tech-letter {
-            opacity: 0.2;
-            transform: scale(1.1);
-        }
-        .tech-name {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
-        .tech-desc {
+        .vs-list {
+            list-style: none;
+        }
+        .vs-list li {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.5;
+        }
+        .vs-list i {
+            font-size: 1.75rem;
+        }
+        .active .vs-list i {
+            color: var(--accent-2);
+        }
+        .vs-badge {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #18181b;
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1.5rem;
+            border-radius: 99px;
+            font-weight: bold;
+            font-family: var(--font-heading);
+        }
+        .active .vs-badge {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+            color: white;
+            border: none;
         }
     </style>
 </head>
@@ -111,43 +79,31 @@
     <div class="slide-container">
         <div class="content">
             <div class="badge">
-                <i class="ph ph-stack"></i> The Tech Stack
+                <i class="ph ph-scales"></i> Reality Check
             </div>
             
-            <h2 class="title-slide">Understanding the Web</h2>
-            <p class="subtitle mt-2">The architecture powering modern, scalable web applications.</p>
+            <h2 class="title-slide">The Reality of IT Jobs</h2>
+            <p class="subtitle mt-2">What you think you need vs What companies actually want.</p>
             
-            <div class="mern-grid">
-                <!-- M -->
-                <div class="tech-card tech-mongo">
-                    <i class="ph-fill ph-database tech-icon"></i>
-                    <div class="tech-name">MongoDB</div>
-                    <div class="tech-desc">NoSQL Database. Stores data flexibly as JSON-like documents.</div>
-                    <div class="tech-letter">M</div>
+            <div class="comparison-container">
+                <div class="vs-card">
+                    <div class="vs-badge">College Thinking</div>
+                    <div class="vs-title" style="color: #94a3b8;">Degree Focused</div>
+                    <ul class="vs-list">
+                        <li><i class="ph-fill ph-x-circle" style="color: #ef4444;"></i> Focus only on passing exams.</li>
+                        <li><i class="ph-fill ph-x-circle" style="color: #ef4444;"></i> Knowing language theory (C, C++).</li>
+                        <li><i class="ph-fill ph-x-circle" style="color: #ef4444;"></i> Small projects copied from YouTube.</li>
+                    </ul>
                 </div>
-
-                <!-- E -->
-                <div class="tech-card tech-express">
-                    <i class="ph-fill ph-paper-plane-tilt tech-icon"></i>
-                    <div class="tech-name">Express</div>
-                    <div class="tech-desc">Server Framework. Handles routing, requests, and middleware logic.</div>
-                    <div class="tech-letter">E</div>
-                </div>
-
-                <!-- R -->
-                <div class="tech-card tech-react">
-                    <i class="ph-fill ph-atom tech-icon"></i>
-                    <div class="tech-name">React</div>
-                    <div class="tech-desc">Frontend UI. Builds dynamic, component-driven user interfaces.</div>
-                    <div class="tech-letter">R</div>
-                </div>
-
-                <!-- N -->
-                <div class="tech-card tech-node">
-                    <i class="ph-fill ph-hexagon tech-icon"></i>
-                    <div class="tech-name">Node.js</div>
-                    <div class="tech-desc">Runtime Environment. Executes JavaScript on the backend server.</div>
-                    <div class="tech-letter">N</div>
+                
+                <div class="vs-card active">
+                    <div class="vs-badge">Company Reality</div>
+                    <div class="vs-title text-gradient">Skill Focused</div>
+                    <ul class="vs-list">
+                        <li><i class="ph-fill ph-check-circle"></i> Focus on solving real problems.</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Knowing modern tech (React, Node).</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Building actual projects that work.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -155,7 +111,7 @@
         <div class="footer">
             <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
             <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
-            <div class="footer-right">4 / 10</div>
+            <div class="footer-right">4 / 27</div>
         </div>
         <div class="progress-bar"></div>
     </div>

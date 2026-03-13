@@ -3,116 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How the Internet Works - Slide 5</title>
+    <title>What is an Engineer? - Slide 5</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .flow-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 4rem;
-            width: 100%;
-            position: relative;
+        .def-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 6px solid var(--accent-1);
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        .highlight {
+            color: white;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(192, 132, 252, 0.2));
+            padding: 0 0.5rem;
+            border-radius: 4px;
         }
         
-        /* Connecting Line */
-        .flow-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            right: 5%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            z-index: 0;
-            transform: translateY(-50%);
+        .roles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
-
-        .flow-step {
-            position: relative;
-            z-index: 1;
-            width: 22%;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(20px);
-            transition: transform 0.3s;
-        }
-
-        .flow-step:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.05);
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-            color: white;
-            border-radius: 50%;
+        .role-item {
             display: flex;
             align-items: center;
+            gap: 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+        .role-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            display: flex;
             justify-content: center;
-            font-weight: bold;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--accent-2);
+        }
+        .role-text-title {
             font-family: var(--font-heading);
             font-size: 1.25rem;
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .step-icon {
-            font-size: 3rem;
-            margin: 1rem 0;
-            color: var(--text-primary);
-        }
-
-        .step-title {
-            font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            color: white;
         }
-
-        .step-desc {
-            font-size: 0.9rem;
+        .role-text-desc {
             color: var(--text-secondary);
-            line-height: 1.4;
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
         }
-
-        /* Animated Pulse on the line */
-        .pulse-dot {
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            box-shadow: 0 0 20px var(--accent-1);
-            animation: travel 4s infinite linear;
-        }
-
-        @keyframes travel {
-            0% { left: 5%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { left: 95%; opacity: 0; }
-        }
-
-        /* Specific Icon Colors */
-        .c-react { color: #61DAFB; }
-        .c-api { color: #fff; }
-        .c-node { color: #68A063; }
-        .c-mongo { color: #4DB33D; }
     </style>
 </head>
 <body>
@@ -125,45 +75,46 @@
     <div class="slide-container">
         <div class="content">
             <div class="badge">
-                <i class="ph ph-arrows-left-right"></i> Architecture
+                <i class="ph ph-terminal-window"></i> Fundamentals
             </div>
             
-            <h2 class="title-slide">How the Internet Actually Works</h2>
-            <p class="subtitle mt-2">The Request-Response Cycle in real time.</p>
+            <h2 class="title-slide">What is a Software Engineer?</h2>
             
-            <div class="flow-container">
-                <div class="pulse-dot"></div>
+            <div class="def-box">
+                A Software Engineer is a person who uses <span class="highlight">code as a tool</span> to solve <span class="highlight">real-world problems</span> and make human life easier.
+            </div>
+            
+            <div class="roles-grid">
+                <div class="role-item">
+                    <div class="role-icon"><i class="ph-fill ph-browser"></i></div>
+                    <div>
+                        <div class="role-text-title">They Build Websites</div>
+                        <div class="role-text-desc">Like Amazon, Flipkart, or Netflix.</div>
+                    </div>
+                </div>
                 
-                <!-- Step 1 -->
-                <div class="flow-step">
-                    <div class="step-number">1</div>
-                    <i class="ph-fill ph-cursor-click step-icon c-react"></i>
-                    <div class="step-title">The Action</div>
-                    <div class="step-desc">User clicks a button on the UI (React frontend).</div>
+                <div class="role-item">
+                    <div class="role-icon"><i class="ph-fill ph-device-mobile"></i></div>
+                    <div>
+                        <div class="role-text-title">They Build Apps</div>
+                        <div class="role-text-desc">Like WhatsApp, Instagram, or Zomato.</div>
+                    </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="flow-step">
-                    <div class="step-number">2</div>
-                    <i class="ph-fill ph-paper-plane-right step-icon c-api"></i>
-                    <div class="step-title">The Request</div>
-                    <div class="step-desc">API Request is sent across the internet (Axios/Fetch).</div>
+                
+                <div class="role-item">
+                    <div class="role-icon"><i class="ph-fill ph-robot"></i></div>
+                    <div>
+                        <div class="role-text-title">They Train AI</div>
+                        <div class="role-text-desc">Like ChatGPT and Face Unlock systems.</div>
+                    </div>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="flow-step">
-                    <div class="step-number">3</div>
-                    <i class="ph-fill ph-cpu step-icon c-node"></i>
-                    <div class="step-title">The Server</div>
-                    <div class="step-desc">Server processes the logic and authenticates (Node/Express).</div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="flow-step">
-                    <div class="step-number">4</div>
-                    <i class="ph-fill ph-database step-icon c-mongo"></i>
-                    <div class="step-title">The Data</div>
-                    <div class="step-desc">Data is securely fetched or saved into the DB (MongoDB).</div>
+                
+                <div class="role-item">
+                    <div class="role-icon"><i class="ph-fill ph-shield-check"></i></div>
+                    <div>
+                        <div class="role-text-title">They Keep Data Safe</div>
+                        <div class="role-text-desc">Banking apps and secure passwords.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,7 +122,7 @@
         <div class="footer">
             <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
             <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
-            <div class="footer-right">5 / 10</div>
+            <div class="footer-right">5 / 27</div>
         </div>
         <div class="progress-bar"></div>
     </div>

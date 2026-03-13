@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Jobs - Slide 16</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .ai-center {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .big-question {
+            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .big-answer {
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent-1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .quote-icon {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 3rem;
+            color: var(--accent-1);
+            background: #18181b;
+            padding: 0 10px;
+        }
+        .quote-text {
+            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            line-height: 1.4;
+            color: #e2e8f0;
+        }
+        .highlight-ai {
+            color: #a78bfa;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-robot"></i> The Elephant in the Room
+            </div>
+            
+            <div class="ai-center">
+                <div class="big-question">"Will AI Take My Job?"</div>
+                <div class="big-answer">NO.</div>
+                
+                <div class="quote-card">
+                    <i class="ph-fill ph-quotes quote-icon"></i>
+                    <div class="quote-text">
+                        AI will not replace humans.<br><br>
+                        But humans who <span class="highlight-ai">know how to use AI</span> will replace humans who don't.
+                    </div>
+                </div>
+                
+                <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-secondary);">
+                    AI is a powerful assistant, not a replacement. You still need an engineer to give it the right instructions and assemble the final product.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">16 / 27</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

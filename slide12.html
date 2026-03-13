@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why MERN? - Slide 12</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .mern-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--accent-1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.1);
+        }
+        .mern-highlight {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        .reasons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-inline: auto;
+        }
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+        .r-icon {
+            font-size: 2.5rem;
+            color: var(--accent-2);
+        }
+        .r-text {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        .r-title {
+            font-weight: bold;
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-stack"></i> Industry Standard
+            </div>
+            
+            <h2 class="title-slide">Why Choose the MERN Stack?</h2>
+            
+            <div class="mern-box">
+                <div class="mern-highlight">One Language to Rule Them All</div>
+                <div style="font-size: 1.25rem; color: var(--text-secondary);">
+                    With MERN, you only need to learn <strong style="color: #facc15;">JavaScript</strong> to build both the Frontend and the Backend!
+                </div>
+                
+                <div class="reasons-list">
+                    <div class="reason-item">
+                        <i class="ph-fill ph-trend-up r-icon"></i>
+                        <div>
+                            <div class="r-title">Huge Job Market</div>
+                            <div class="r-text">Startups and MNCs are desperately looking for MERN developers.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <i class="ph-fill ph-rocket-launch r-icon" style="color: var(--accent-1);"></i>
+                        <div>
+                            <div class="r-title">Fast Development</div>
+                            <div class="r-text">You can build full applications much faster than using older technologies like Java or PHP.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="reason-item">
+                        <i class="ph-fill ph-users-three r-icon" style="color: var(--accent-3);"></i>
+                        <div>
+                            <div class="r-title">Massive Community</div>
+                            <div class="r-text">If you get an error, someone on the internet has already solved it. Just Google it!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">12 / 27</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

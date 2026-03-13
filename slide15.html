@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Revolution - Slide 7</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .split-ai {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .ai-tools-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .ai-tools-list li {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .ai-tools-list li:hover {
+            transform: translateX(10px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .ai-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .ai-icon.copilot { background: linear-gradient(135deg, #24292e, #4f46e5); }
+        .ai-icon.chatgpt { background: linear-gradient(135deg, #10a37f, #0d8a6a); }
+
+        .tool-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .tool-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .golden-rule {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid var(--accent-3);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        /* Split Screen comparison */
+        .comparison-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .compare-card {
+            padding: 1.5rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compare-old {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px dashed rgba(239, 68, 68, 0.3);
+        }
+        .compare-new {
+            background: linear-gradient(135deg, rgba(16, 163, 127, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(16, 163, 127, 0.3);
+            box-shadow: 0 10px 30px rgba(16, 163, 127, 0.15);
+        }
+
+        .compare-header {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .compare-old .compare-header { color: #ef4444; }
+        .compare-new .compare-header { color: #10a37f; }
+
+        .compare-value {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+        }
+        .compare-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge" style="color: #ec4899; background: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.2);">
+                <i class="ph ph-magic-wand"></i> The Future
+            </div>
+            
+            <h2 class="title-slide">The AI Revolution</h2>
+            <p class="subtitle mt-2">Meet Your Ultimate Pair Programmer.</p>
+            
+            <div class="split-ai">
+                <!-- Left Details -->
+                <div class="ai-details">
+                    <ul class="ai-tools-list">
+                        <li>
+                            <div class="ai-icon copilot"><i class="ph-bold ph-github-logo"></i></div>
+                            <div>
+                                <div class="tool-title">GitHub Copilot & Cursor</div>
+                                <div class="tool-desc">Writing boilerplate logic and full functions 5x faster.</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ai-icon chatgpt"><i class="ph-bold ph-chat-centered-text"></i></div>
+                            <div>
+                                <div class="tool-title">ChatGPT & Claude</div>
+                                <div class="tool-desc">Deep debugging, error explanations, and architecture planning.</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="golden-rule">
+                        <span class="font-bold">The Golden Rule:</span> AI is the hyper-engine. You are the driver. It executes syntax, but you map the business logic.
+                    </div>
+                </div>
+
+                <!-- Right Comparison -->
+                <div class="comparison-box">
+                    <div class="compare-card compare-old">
+                        <div class="compare-header"><i class="ph ph-hourglass-high"></i> The Old Way</div>
+                        <div class="compare-value">2 Hours</div>
+                        <div class="compare-desc">Spent digging through Stack Overflow to debug a mysterious API crash.</div>
+                    </div>
+
+                    <div class="compare-card compare-new">
+                        <div class="compare-header"><i class="ph-fill ph-lightning"></i> The AI Way</div>
+                        <div class="compare-value text-gradient-accent">2 Minutes</div>
+                        <div class="compare-desc">Spent providing context in a prompt and generating a flawless fix.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">15 / 27</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

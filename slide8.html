@@ -3,123 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6-Month Roadmap - Slide 8</title>
+    <title>Frontend Details - Slide 8</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 4rem auto 0;
-            padding-left: 3rem;
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+            align-items: center;
         }
-        
-        /* Central Line */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--accent-1), var(--accent-2), var(--accent-3));
-            border-radius: 4px;
+        .tech-list {
+            list-style: none;
         }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 4rem;
+        .tech-list li {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            color: white;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-1);
         }
-        .timeline-item:last-child {
-            margin-bottom: 0;
+        .tech-list i {
+            color: var(--accent-1);
+            font-size: 2rem;
+            margin-top: -0.2rem;
         }
-
-        /* Timeline Dot */
-        .timeline-dot {
-            position: absolute;
-            left: -3rem;
-            top: 50%;
-            transform: translateY(-50%) translateX(-50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--bg-primary);
-            border: 4px solid var(--accent-1);
-            z-index: 2;
-            box-shadow: 0 0 15px var(--accent-1);
-        }
-        .item-2 .timeline-dot { border-color: var(--accent-2); box-shadow: 0 0 15px var(--accent-2); }
-        .item-3 .timeline-dot { border-color: var(--accent-3); box-shadow: 0 0 15px var(--accent-3); }
-
-        .timeline-content {
+        .visual-box {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
+            padding: 2rem;
             border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
-            transition: transform 0.3s;
+            text-align: center;
         }
-        .timeline-content:hover {
-            transform: translateX(10px);
-            background: rgba(255,255,255,0.05);
-        }
-        
-        /* Connecting arrow to content */
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            width: 20px;
-            height: 20px;
-            background: var(--glass-bg);
-            border-left: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .month-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        .item-1 .month-badge { color: var(--accent-1); background: rgba(59, 130, 246, 0.1); }
-        .item-2 .month-badge { color: var(--accent-2); background: rgba(139, 92, 246, 0.1); }
-        .item-3 .month-badge { color: var(--accent-3); background: rgba(236, 72, 153, 0.1); }
-
-        .phase-title {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .phase-desc {
-            color: var(--text-secondary);
+        .code-snippet {
+            font-family: monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: left;
             font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #333;
         }
-
-        .phase-tags {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-        .phase-tag {
-            font-size: 0.85rem;
-            padding: 0.4rem 0.8rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 6px;
-            color: #d4d4d8;
-            background: rgba(0,0,0,0.2);
-        }
+        .html-color { color: #569cd6; } /* Blue for tags */
+        .attr-color { color: #9cdcfe; } /* Light blue for attributes */
+        .string-color { color: #ce9178; } /* Orange for strings */
     </style>
 </head>
 <body>
@@ -132,42 +67,49 @@
     <div class="slide-container">
         <div class="content">
             <div class="badge">
-                <i class="ph ph-map-trifold"></i> Journey To Mastery
+                <i class="ph ph-paint-brush"></i> UI / UX
             </div>
             
-            <h2 class="title-slide">The vsen.ai 6-Month Roadmap</h2>
+            <h2 class="title-slide">Frontend: The Face of the App</h2>
+            <p class="subtitle mt-2">If you can see it and click it, it is Frontend.</p>
             
-            <div class="timeline">
-                
-                <!-- Phase 1 -->
-                <div class="timeline-item item-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="month-badge">Months 1 - 2</div>
-                        <div class="phase-title">Fundamentals & Logic Mastery</div>
-                        <div class="phase-desc">Building the core engine. You will learn the syntax, logic flow, and algorithms using JavaScript to manipulate the DOM and solve raw algorithmic problems.</div>
-                        <div class="phase-tags">
-                            <span class="phase-tag">Vanilla JS</span>
-                            <span class="phase-tag">HTML5 & CSS3</span>
-                            <span class="phase-tag">Git Version Control</span>
-                            <span class="phase-tag">Algorithmic Thinking</span>
-                        </div>
-                    </div>
+            <div class="split-layout">
+                <div>
+                    <ul class="tech-list">
+                        <li>
+                            <i class="ph-fill ph-file-code"></i> 
+                            <div>
+                                <strong>HTML</strong><br>
+                                <span style="font-size: 1rem; color: var(--text-secondary); font-weight: normal;">The skeleton. It gives structure (buttons, images, text).</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ph-fill ph-palette"></i> 
+                            <div>
+                                <strong>CSS / Tailwind</strong><br>
+                                <span style="font-size: 1rem; color: var(--text-secondary); font-weight: normal;">The makeup. It adds beautiful colors and styling.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ph-fill ph-lightning"></i> 
+                            <div>
+                                <strong>JavaScript & React</strong><br>
+                                <span style="font-size: 1rem; color: var(--text-secondary); font-weight: normal;">The muscle. It makes buttons click and things move without reloading.</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
-                <!-- Phase 2 -->
-                <div class="timeline-item item-2">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="month-badge">Months 3 - 6</div>
-                        <div class="phase-title">FullStack & Mobile Dominance</div>
-                        <div class="phase-desc">Architecting real-world applications. We move into the MERN stack to build robust APIs, attach scalable databases, and bundle them into React and React Native frontends.</div>
-                        <div class="phase-tags">
-                            <span class="phase-tag">React.js</span>
-                            <span class="phase-tag">Node / Express</span>
-                            <span class="phase-tag">MongoDB</span>
-                            <span class="phase-tag">React Native Mobile</span>
-                        </div>
+                
+                <div class="visual-box">
+                    <h3 style="font-family: var(--font-heading); color: white; margin-bottom: 1rem;">Simple Example</h3>
+                    <div style="background: linear-gradient(135deg, #60a5fa, #3b82f6); color: white; padding: 1rem 2rem; border-radius: 8px; display: inline-block; font-weight: bold; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);">
+                        Click Here to Login
+                    </div>
+                    
+                    <div class="code-snippet">
+                        <span class="html-color">&lt;button</span> <span class="attr-color">class=</span><span class="string-color">"bg-blue-500 text-white"</span><span class="html-color">&gt;</span><br>
+                        &nbsp;&nbsp;Click Here to Login<br>
+                        <span class="html-color">&lt;/button&gt;</span>
                     </div>
                 </div>
             </div>
@@ -176,7 +118,7 @@
         <div class="footer">
             <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
             <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
-            <div class="footer-right">8 / 10</div>
+            <div class="footer-right">8 / 27</div>
         </div>
         <div class="progress-bar"></div>
     </div>

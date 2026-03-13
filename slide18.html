@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Practice - Slide 18</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .habit-container {
+            display: flex;
+            align-items: stretch;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .habit-card {
+            flex: 1;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .h-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .h-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        .h-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        .time-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 1rem;
+            border-radius: 99px;
+            font-weight: bold;
+            color: var(--accent-1);
+            margin-top: 1rem;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.1));
+            border: 1px dashed rgba(16, 185, 129, 0.4);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="slide-container">
+        <div class="content">
+            <div class="badge">
+                <i class="ph ph-calendar-plus"></i> The Secret
+            </div>
+            
+            <h2 class="title-slide">How to Practice Everyday</h2>
+            <p class="subtitle mt-2">Consistency beats natural talent always.</p>
+            
+            <div class="habit-container">
+                <div class="habit-card">
+                    <i class="ph-fill ph-book-open h-icon" style="color: var(--accent-1);"></i>
+                    <div class="h-title">Learn</div>
+                    <div class="h-desc">Watch a concept video or read documentation about a new skill.</div>
+                    <div class="time-badge">30 Mins</div>
+                </div>
+                
+                <div class="habit-card">
+                    <i class="ph-fill ph-keyboard h-icon" style="color: var(--accent-2);"></i>
+                    <div class="h-title">Code</div>
+                    <div class="h-desc">Type the code yourself without looking. Make mistakes, fix errors.</div>
+                    <div class="time-badge">60 Mins</div>
+                </div>
+                
+                <div class="habit-card">
+                    <i class="ph-fill ph-share-network h-icon" style="color: var(--accent-3);"></i>
+                    <div class="h-title">Share</div>
+                    <div class="h-desc">Post your small milestone on LinkedIn or GitHub. Build your brand.</div>
+                    <div class="time-badge">10 Mins</div>
+                </div>
+            </div>
+            
+            <div class="formula-box">
+                <i class="ph-fill ph-fire" style="color: #fca5a5; margin-right: 0.5rem;"></i>
+                The 100 Days Rule: <span style="color: #34d399;">1.5 Hours/Day × 100 Days = Job Ready</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left" style="font-weight: 600; color: var(--text-primary);">vsen.ai</div>
+            <div class="footer-center" style="font-family: var(--font-heading); letter-spacing: 0.1em; text-transform: uppercase;">From Pratapgarh to Global Tech.</div>
+            <div class="footer-right">18 / 27</div>
+        </div>
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="nav-hint">
+        Use <span class="key">&rarr;</span> or <span class="key">Space</span> to navigate
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
