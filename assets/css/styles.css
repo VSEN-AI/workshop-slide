@@ -96,9 +96,9 @@ body {
 
 /* Slide Container */
 .slide-container {
-  width: 90vw;
+  width: 95vw;
   max-width: 1400px;
-  height: 85vh;
+  height: 94vh;
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -145,11 +145,12 @@ h1, h2, h3, h4 {
 /* Content Layout */
 .content {
   flex: 1;
-  padding: 4rem;
+  padding: 1.5rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .content-center {
@@ -182,19 +183,19 @@ h1, h2, h3, h4 {
 }
 
 .title-main {
-  font-size: 4.5rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .title-slide {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: var(--text-secondary);
   font-weight: 400;
   max-width: 800px;
@@ -202,7 +203,7 @@ h1, h2, h3, h4 {
 }
 
 .footer {
-  padding: 1.5rem 4rem;
+  padding: 1rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
