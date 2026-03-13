@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide = parseInt(match[1]);
     }
 
-    const totalSlides = 10;
+    const totalSlides = 23;
 
     // Set progress bar width based on current slide
     const progressBar = document.querySelector('.progress-bar');
